@@ -23,6 +23,13 @@
         };
     };
     behaviors {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <200>;
+        require-prior-idls-ms = <125>;
+        bindings = <&kp>, <&kp>;
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -36,7 +43,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                   &kp FUN      &kp SPACE     &kp LSHFT        &kp BSPC      &mo NUM      &kp RET
+                                   &mo FUN      &kp SPACE     &sk LSHFT        &kp BSPC      &mo NUM      &kp RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
