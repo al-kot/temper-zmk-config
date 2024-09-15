@@ -49,12 +49,6 @@
             bindings = <&kp SEMI>, <&kp COLON>;
             mods = <(MOD_LSFT)>;
         };
-        dot_colon: comma_rchev {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT)>;
-        };
         dot_colon: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
