@@ -43,10 +43,16 @@
             bindings = <&kp LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
-        comma_semi: comma_semi {
+        comma_semi: colon_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
+            bindings = <&kp SEMI>, <&kp COLON>;
+            mods = <(MOD_LSFT)>;
+        };
+        dot_colon: comma_rchev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT)>;
         };
         dot_colon: dot_colon {
@@ -80,13 +86,13 @@
                 default_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &bt BT_CLR_ALL    &bt BT_SEL 0      &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y       &kp APOS   
+        &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y       &kp SEMI
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp A         &kp R         &kp S         &kp T         &kp G             &kp M         &kp N         &kp E         &kp I         &kp O
+        &kp A         &kp R         &kp S         &kp T         &kp D             &kp H         &kp N         &kp E         &kp I         &kp O
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H      &comma_semi    &dot_colon    &qmrk_excl
+        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                   &kp LGUI      &mo NUM     &smart_shft        &kp SPACE      &mo NAV     &super_bspc
+                                   &kp SPACE      &kp SPACE     &kp LSHFT        &kp SPACE      &kp BSPC      &kp RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
