@@ -31,7 +31,7 @@
             quick-tap-ms = <200>;
             require-prior-idls-ms = <125>;
             bindings = <&kp>, <&kp>;
-        }
+        };
     };
         keymap {
                 compatible = "zmk,keymap";
