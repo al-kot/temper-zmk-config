@@ -15,13 +15,6 @@
 #define FUN 3
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <NUM NAV>;
-            then-layer = <FUN>;
-        };
-    };
     behaviors {
     };
         keymap {
@@ -36,7 +29,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                   &kp F      &kp SPACE     &sk LSHFT        &kp BSPC      &mo FUN      &kp RET
+                                   &mo FUN      &kp SPACE     &sk LSHFT        &kp BSPC      &mo NUM      &kp RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
