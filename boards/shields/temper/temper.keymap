@@ -32,6 +32,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        cwt: caps_word_tab {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&caps_word>, <&kp TAB>;
+        };
         hsk: hold-sticky-key {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -49,11 +58,11 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
         &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y       &kp SEMI
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp A         &kp R         &kp S      &hm LSHFT T      &kp D             &kp H      &hm LSHFT N      &kp E         &kp I         &kp O
+        &kp A         &kp R         &kp S      &hm LSHFT T      &kp D          &hm RALT H     &hm RGUI N      &kp E         &kp I         &kp O
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                 &lt NAV ESC  &lt NUM SPACE &hsk LCTRL LSHFT  &hm LGUI BSPC  &lt NUM RET   &hm RALT TAB
+                                 &lt NAV ESC  &lt NUM SPACE &hsk LCTRL LSHFT  &hm RSHFT BSPC  &lt NUM RET     &cwt
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
