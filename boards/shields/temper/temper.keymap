@@ -32,14 +32,11 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        cwt: caps_word_tab {
-            compatible = "zmk,behavior-hold-tap";
+        cw_tab: caps_word_tab {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&caps_word>, <&kp TAB>;
+            bindings = <&kp TAB>, <&caps_word>;
+            mods = <(MOD_LCTRL)>;
         };
         hsk: hold-sticky-key {
             compatible = "zmk,behavior-hold-tap";
@@ -62,7 +59,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                 &lt NAV ESC  &lt NUM SPACE &hsk LCTRL LSHFT  &hm RSHFT BSPC  &lt NUM RET     &cwt
+                                 &lt NAV ESC  &lt NUM SPACE &hsk LCTRL LSHFT  &hm RSHFT BSPC  &lt NUM RET     &cw_tab
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
