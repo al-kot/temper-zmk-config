@@ -36,7 +36,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp TAB>, <&caps_word>;
-            mods = <(MOD_LCTRL)>;
+            mods = <(MOD_LCTL)>;
         };
         hsk: hold-sticky-key {
             compatible = "zmk,behavior-hold-tap";
