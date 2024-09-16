@@ -23,6 +23,14 @@
 
 / {
     behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         hsk: hold-sticky-key {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -40,11 +48,11 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
         &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y       &kp SEMI
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp A         &kp R         &kp S      &mt LSHFT T      &kp D             &kp H      &mt LSHFT N      &kp E         &kp I         &kp O
+        &kp A         &kp R         &kp S      &hm LSHFT T      &kp D             &kp H      &hm LSHFT N      &kp E         &kp I         &kp O
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                 &lt NAV ESC  &lt NUM SPACE &hsk LCTRL LSHFT  &mt LGUI BSPC  &lt NUM TAB   &mt RALT RET
+                                 &lt NAV ESC  &lt NUM SPACE &hsk LCTRL LSHFT  &mt LGUI BSPC  &lt NUM TAB   &hm RALT RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
