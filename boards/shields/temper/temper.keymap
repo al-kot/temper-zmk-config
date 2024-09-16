@@ -46,7 +46,7 @@
             flavor = "hold-preferred";
             bindings = <&kp>, <&sk>;
         };
-        smart_shft: smart_shift {
+        sm_shft: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&caps_word>;
@@ -65,7 +65,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                 &lt NAV ESC  &lt NUM SPACE  &smart_shift    &hm RSHFT BSPC  &lt NUM RET     &kp TAB
+                                 &lt NAV ESC  &lt NUM SPACE    &sm_shft      &hm RSHFT BSPC  &lt NUM RET     &kp TAB
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
