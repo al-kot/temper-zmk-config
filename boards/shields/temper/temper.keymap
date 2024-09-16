@@ -14,13 +14,14 @@
 #define NAV 2
 #define FUN 3
 
+&lt {
+    tapping-term-ms = <200>;
+};
+&sk {
+    quick-release;
+};
+
 / {
-    &lt {
-        tapping-term-ms = <200>;
-    };
-    &sk {
-        quick-release;
-    };
     behaviors {
         hsk: hold-sticky-key {
             compatible = "zmk,behavior-hold-tap";
