@@ -30,7 +30,7 @@
             bindings = <&to NUM>;
         };
     };
-}
+};
 
 / {
     behaviors {
