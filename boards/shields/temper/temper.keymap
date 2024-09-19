@@ -24,7 +24,7 @@
 /{
     combos {
         compatible = "zmk,combos";
-        combo_esc {
+        combo_num {
             timeout-ms = <50>;
             key-positions = <31 34>;
             bindings = <&to NUM>;
@@ -87,9 +87,9 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp AT        &kp N4    &hm LCTRL N5      &kp N6       &kp PRCNT        &kp MINUS      &kp PLUS  &hm RCTRL LBKT    &kp RBKT      &kp PIPE
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp EXCL       &kp N1        &kp N2        &kp N3       &kp DLLR         &kp UNDER      &kp EQUAL     &kp SQT       &kp LBRC      &kp GRAVE
+       &kp EXCL       &kp N1        &kp N2        &kp N3       &kp DLLR         &kp UNDER      &kp EQUAL     &kp SQT       &kp DOT      &kp GRAVE
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                   &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT BSPC   &kp RET     &lt NAV TAB
+                                   &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT BSPC    &kp RET     &lt NAV TAB
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
