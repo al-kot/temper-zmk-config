@@ -21,6 +21,17 @@
     quick-release;
 };
 
+/{
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <31 34>;
+            bindings = <&to NUM>;
+        };
+    };
+}
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -53,14 +64,6 @@
             mods = <(MOD_RSFT)>;
         };
     };
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <31 34>;
-            bindings = <&to NUM>;
-        };
-    };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -86,7 +89,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp EXCL       &kp N1        &kp N2        &kp N3       &kp DLLR         &kp UNDER      &kp EQUAL     &kp SQT       &kp LBRC      &kp GRAVE
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                   &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT RSHFT   &kp RET     &lt NAV TAB
+                                   &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT BSPC   &kp RET     &lt NAV TAB
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -99,7 +102,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B          &kp PG_DN      &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT RSHFT   &kp RET      &mo FUN
+                                  &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT BSPC   &kp RET      &mo FUN
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -112,7 +115,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &kp B             &kp K         &kp M       &kp COMMA      &kp DOT      &kp FSLH
 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT RSHFT   &kp RET      &mo NAV
+                                  &kp SPACE     &kp SPACE    &kp LSHFT      &hm RSHFT BSPC   &kp RET      &mo NAV
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
