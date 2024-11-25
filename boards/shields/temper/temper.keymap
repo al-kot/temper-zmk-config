@@ -71,11 +71,11 @@
                 sym_1_layer {
                         bindings = <
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans        &trans        &trans        &trans        &trans           &kp TILD      &kp DLR        &kp AT       &kp HASH       &kp GRV
+      &trans        &trans        &trans        &trans        &trans           &kp TILDE     &kp DLLR       &kp AT       &kp HASH      &kp GRAVE
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &trans       &sk LALT      &sk LCTRL     &sk LGUI       &trans           &kp SCLN      &kp LPRN       &kp LCBR     &kp LBRC      &kp BSLS
+      &trans       &sk LALT      &sk LCTRL     &sk LGUI       &trans           &kp SEMI      &kp LPAR       &kp LBRC     &kp LBKT      &kp BSLH
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &trans        &trans        &trans        &trans        &trans           &kp COLN      &kp RPRN       &kp RCBR     &kp RBRC       &trans
+      &trans        &trans        &trans        &trans        &trans           &kp COLON     &kp RPAR       &kp RBRC     &kp RBKT       &trans
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
                                   &trans        &trans        &trans            &trans       &num_word      &trans
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
