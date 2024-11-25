@@ -19,9 +19,6 @@
 &lt {
     tapping-term-ms = <200>;
 };
-&sk {
-    lazy;
-};
 
 / {
     behaviors {
