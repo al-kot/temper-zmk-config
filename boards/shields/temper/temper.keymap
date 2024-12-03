@@ -65,8 +65,8 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
 
-#define KEY_REP &krep 0 0
-#define NUM_WORD &nword 0 0
+#define KEY_REP &krep FUN 0
+#define NUM_WORD &nword NUM NUM
 
 &lt {
     tapping-term-ms = <200>;
@@ -120,7 +120,7 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
-            bindings = <&mo FUN>, <&key_repeat>;
+            bindings = <&mo>, <&key_repeat>;
         };
         nword: num_word {
             compatible = "zmk,behavior-hold-tap";
@@ -129,7 +129,7 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
-            bindings = <&mo NUM>, <&num_word NUM>;
+            bindings = <&mo>, <&num_word>;
 
         };
     };
