@@ -21,6 +21,54 @@
     tapping-term-ms = <200>;
 };
 
+#define LT0  4  // left-top row
+#define LT1  3
+#define LT2  2
+#define LT3  1
+#define LT4  0
+
+#define RT0  5  // right-top row
+#define RT1  6
+#define RT2  7
+#define RT3  8
+#define RT4  9
+
+#define LM0 14  // left-middle row
+#define LM1 13
+#define LM2 12
+#define LM3 11
+#define LM4 10
+
+#define RM0 15  // right-middle row
+#define RM1 16
+#define RM2 17
+#define RM3 18
+#define RM4 19
+
+#define LB0 24  // left-bottom row
+#define LB1 23
+#define LB2 22
+#define LB3 21
+#define LB4 20
+
+#define RB0 25  // right-bottom row
+#define RB1 26
+#define RB2 27
+#define RB3 28
+#define RB4 29
+
+#define LH0 32  // left thumb keys
+#define LH1 31
+#define LH2 30
+
+#define RH0 33  // right thumb keys
+#define RH1 34
+#define RH2 35
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left hand
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
+#define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
+
 / {
     behaviors {
         sm_shft: smart_shift {
@@ -29,14 +77,43 @@
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_RSFT)>;
         };
+
+        hml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;    // <---[[right-hand keys]]
+        };
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;    // <---[[right-hand keys]]
+        };
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        krep: key_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp RSFT>, <&key_repeat>;
         };
     };
         keymap {
@@ -44,15 +121,14 @@
 
                 base_layer {
                         bindings = <
-                            // &kp R      &hm LCTRL S   &hm LGUI T    &hm LALT D 
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
        &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y        &kp SQT
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp A      &hm LALT R    &hm LCTRL S   &hm LGUI T       &kp G             &kp M      &hm LGUI N    &hm LCTRL E   &hm LALT I      &kp O
+       &kp A      &hml LALT R   &hml LCTRL S  &hml LGUI T      &kp G             &kp M      &hmr LGUI N  &hmr LCTRL E   &hmr LALT I     &kp O
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                 &sl SYM    &lt FUN SPC     &sm_shft         &mt RSFT BSPC    KR_FUN     &num_word NUM
+                                  &sl SYM     &lt FUN SPC    &sm_shft            &krep        KR_FUN     &num_word NUM
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -82,32 +158,6 @@
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
-//                 sym_1_layer {
-//                         bindings = <
-// //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//       &trans        &trans        &trans        &trans        &trans           &kp TILDE     &kp DLLR       &kp AT       &kp HASH      &kp GRAVE
-// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//       &trans       &sk LALT      &sk LCTRL     &sk LGUI       &trans           &kp SEMI      &kp LPAR       &kp LBRC     &kp LBKT      &kp BSLH
-// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//       &trans        &trans        &trans        &trans        &trans           &kp COLON     &kp RPAR       &kp RBRC     &kp RBKT       &trans
-// //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-//                                   &trans        &trans        &trans            &trans        &trans        &trans
-// //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-//                         >;
-//                 };
-//                 sym_2_layer {
-//                         bindings = <
-// //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//       &trans       &kp PRCNT     &kp STAR      &kp CARET      &trans            &trans        &trans        &trans        &trans        &trans
-// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//      &kp EXCL      &kp MINUS     &kp PLUS      &kp EQUAL      &kp LT            &trans       &sk RGUI      &sk RCTRL     &sk RALT       &trans
-// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//       &trans        &trans       &kp PIPE      &kp AMPS       &kp GT            &trans        &trans        &trans        &trans        &trans
-// //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-//                                   &trans        &trans        &trans            &trans        &trans        &trans
-// //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-//                         >;
-//                 };
                 fun_layer {
                         bindings = <
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
