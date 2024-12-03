@@ -17,10 +17,6 @@
 
 #define KR_FUN &lt FUN &key_repeat
 
-&lt {
-    tapping-term-ms = <200>;
-};
-
 #define LT0  4  // left-top row
 #define LT1  3
 #define LT2  2
@@ -69,6 +65,14 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
 
+&lt {
+    tapping-term-ms = <200>;
+};
+
+&mt {
+    tapping-term-ms = <200>;
+};
+
 / {
     behaviors {
         sm_shft: smart_shift {
@@ -97,15 +101,15 @@
             hold-trigger-key-positions = <KEYS_L KEYS_T>;    // <---[[right-hand keys]]
         };
 
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
-            require-prior-idle-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+        // hm: homerow_mods {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <150>;
+        //     quick-tap-ms = <0>;
+        //     require-prior-idle-ms = <125>;
+        //     flavor = "tap-preferred";
+        //     bindings = <&kp>, <&kp>;
+        // };
         krep: key_repeat {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
@@ -128,7 +132,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt FUN SPC    &sm_shft            &krep        KR_FUN     &num_word NUM
+                                  &sl SYM     &lt FUN SPC    &sm_shft        &mt RSFT BSPC     &krep     &num_word NUM
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -167,7 +171,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       &trans        &kp F1        &kp F2        &kp F3        &kp F12           &trans        &trans        &trans        &trans        &trans
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &trans     &num_word NUM    &trans            &trans     &num_word NUM    &trans
+                                  &trans        &trans        &trans            &trans        &trans        &trans
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
