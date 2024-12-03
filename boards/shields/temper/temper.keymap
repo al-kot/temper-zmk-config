@@ -120,7 +120,7 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
-            bindings = <&kp RSFT>, <&key_repeat>;
+            bindings = <&mo FUN>, <&key_repeat>;
         };
         nword: num_word {
             compatible = "zmk,behavior-hold-tap";
