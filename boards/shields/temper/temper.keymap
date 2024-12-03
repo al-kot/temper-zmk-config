@@ -114,7 +114,7 @@
         //     bindings = <&kp>, <&kp>;
         // };
         krep: key_repeat {
-            compatible = "zmk,behavior-hold-tap,behavior-key-repeat";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
@@ -123,7 +123,7 @@
             bindings = <&mo>, <&key_repeat>;
         };
         nword: num_word {
-            compatible = "zmk,behavior-hold-tap,behavior-auto-layer";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
