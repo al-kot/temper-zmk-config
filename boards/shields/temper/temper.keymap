@@ -124,7 +124,7 @@
             bindings = <&mo>, <&num_word>;
         };
         krep: key_repeat {
-            compatible = "zmk,behavior-hold-tap";
+            compatible = "zmk,behavior-hold-tap,behavior-key-repeat";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
