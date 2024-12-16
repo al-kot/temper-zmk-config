@@ -115,7 +115,7 @@
         // };
 
         nword: num_word {
-            compatible = "zmk,behavior-hold-tap";
+            compatible = "zmk,behavior-hold-tap,behavior-auto-layer";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
