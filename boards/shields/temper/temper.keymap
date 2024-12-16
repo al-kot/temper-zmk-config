@@ -114,15 +114,15 @@
         //     bindings = <&kp>, <&kp>;
         // };
 
-        // nword: num_word {
-        //     compatible = "zmk,behavior-hold-tap";
-        //     #binding-cells = <2>;
-        //     tapping-term-ms = <200>;
-        //     quick-tap-ms = <200>;
-        //     require-prior-idle-ms = <125>;
-        //     flavor = "tap-preferred";
-        //     bindings = <&mo>, <&num_word>;
-        // };
+        nword: num_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&num_word>;
+        };
         krep: key_repeat {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -141,11 +141,11 @@
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
        &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y        &kp SQT
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp A      &hml LALT R   &hml LCTRL S  &hml LGUI T      &kp G             &kp M      &hmr LGUI N  &hmr LCTRL E   &hmr LALT I     &kp O
+       &kp A      &hml LALT R   &hml LCTRL S  &hml LGUI T      &kp G             &kp M      &hmr RGUI N  &hmr RCTRL E   &hmr RALT I     &kp O
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt FUN SPC    &sm_shft        &mt RSFT BSPC    &mo FUN       KEY_REP
+                                  &sl SYM     &lt FUN SPC    &sm_shft       &hmr RSFT BSPC    KEY_REP       NUM_WORD
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -165,11 +165,11 @@
                 sym {
                         bindings = <
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans       &kp PRCNT     &kp STAR      &kp CARET      &trans           &kp TILDE     &kp DLLR       &kp AT       &kp HASH      &kp GRAVE
+      &trans       &kp PRCNT     &kp STAR      &kp CARET      &trans           &kp UNDER     &kp DLLR       &kp AT       &kp HASH      &kp GRAVE
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp EXCL      &kp MINUS     &kp PLUS      &kp EQUAL      &kp LT           &kp SEMI      &kp LPAR       &kp LBRC     &kp LBKT      &kp BSLH
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &trans        &trans       &kp PIPE      &kp AMPS       &kp GT           &kp COLON     &kp RPAR       &kp RBRC     &kp RBKT       &trans
+      &trans        &trans       &kp PIPE      &kp AMPS       &kp GT           &kp COLON     &kp RPAR       &kp RBRC     &kp RBKT      &kb TILDE
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
                                   &trans        &trans        &trans            &trans        &trans        &trans
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
