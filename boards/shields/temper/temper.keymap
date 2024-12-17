@@ -66,7 +66,7 @@
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
 
 #define KEY_REP &mo FUN &key_repeat
-#define NUM_WORD &nword NUM NUM
+#define NUM_WORD &nword NUM 0
 
 &lt {
     tapping-term-ms = <200>;
@@ -114,6 +114,12 @@
         //     bindings = <&kp>, <&kp>;
         // };
 
+        num_dance: num_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&num_word NUM>, <&sl NUM>;
+        };
         nword: num_word {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -121,7 +127,7 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&num_word>;
+            bindings = <&mo>, <&num_dance>;
         };
         // krep: key_repeat {
         //     compatible = "zmk,behavior-hold-tap,behavior-key-repeat";
