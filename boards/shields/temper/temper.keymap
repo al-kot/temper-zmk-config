@@ -92,20 +92,20 @@
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <100>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;    // <---[[right-hand keys]]
         };
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <100>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;    // <---[[right-hand keys]]
         };
 
         num_dance: num_dance {
@@ -136,7 +136,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt FUN SPC    &sm_shft       &hmr RSFT BSPC    NUM_WORD    &key_repeat
+                                  &sl SYM     &lt FUN SPC    &sm_shft       &hmr RSFT BSPC    NUM_WORD      KEY_REP
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -149,7 +149,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       &trans        &trans        &trans        &kp N8        &trans            &trans        &kp N9        &trans        &trans        &trans
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &trans        &trans        &trans            &trans       &tog BASE      &trans
+                                  &trans        &trans        &trans            &trans       &tog BASE        &trans
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
