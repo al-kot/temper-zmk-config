@@ -161,9 +161,9 @@
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &trans       &kp TILDE     &kp STAR      &kp CARET      &trans           &kp HASH      &kp DLLR       &kp AT       &trans        &kp GRAVE
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp EXCL      &kp MINUS     &kp PLUS      &kp EQUAL     &kp PRCNT         &kp SEMI      &kp LPAR       &kp LBRC     &kp LBKT      &kp UNDER
+     &kp EXCL      &kp MINUS     &kp PLUS      &kp EQUAL     &kp PRCNT         &kp SEMI      &kp LPAR       &kp RPAR     &kp LBKT      &kp UNDER
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &trans        &trans       &kp PIPE      &kp AMPS      &kp COLON         &kp COLON     &kp RPAR       &kp RBRC     &kp RBKT      &kp BSLH
+      &trans        &trans       &kp PIPE      &kp AMPS      &kp COLON         &kp COLON     &kp LBRC       &kp RBRC     &kp RBKT      &kp BSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
                                   &trans        &trans        &trans            &trans        &trans        &trans
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
