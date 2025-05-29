@@ -62,7 +62,7 @@
         smod: smod {
             compatible = "zmk,behavior-momentary-layer";
             label = "One-Shot-Layer-MOD";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings = <&sl MOD>;
         };
     };
@@ -77,7 +77,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt FUN SPC    &sm_shft        &lt MOD BSPC  &lt NUM &smod    &sl SYM
+                                  &sl SYM     &lt FUN SPC    &sm_shft        &lt MOD BSPC &lt NUM &sl MOD   &sl SYM
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
