@@ -18,7 +18,6 @@
 #define KR_FUN &lt FUN &key_repeat
 
 #define KEY_REP &mo FUN &key_repeat
-#define NUM_WORD &nword NUM 0
 
 &lt {
     tapping-term-ms = <200>;
@@ -40,23 +39,6 @@
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_RSFT)>;
-        };
-
-        num_dance: num_dance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sl NUM>, <&tog NUM>;
-        };
-
-        nword: nword {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&num_dance>;
         };
 
         mod_num: mod_num {
@@ -81,7 +63,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt FUN SPC    &sm_shft        &lt MOD BSPC &mod_num NUM MOD   &sl SYM
+                                  &sl SYM     &lt FUN SPC    &sm_shft       &mt RSFT BSPC &mod_num NUM MOD  &sl SYM
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
