@@ -59,6 +59,16 @@
             bindings = <&mo>, <&num_dance>;
         };
 
+        mod_num: mod_num {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&sl>;
+
+        }
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -71,7 +81,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt FUN SPC    &sm_shft        &lt MOD BSPC &lt NUM &sl MOD   &sl SYM
+                                  &sl SYM     &lt FUN SPC    &sm_shft        &lt MOD BSPC &mod_num NUM MOD   &sl SYM
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
