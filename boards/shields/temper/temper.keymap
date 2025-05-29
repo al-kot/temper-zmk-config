@@ -61,9 +61,8 @@
 
         smod: smod {
             compatible = "zmk,behavior-momentary-layer";
-            label = "One-Shot-Layer-MOD";
             #binding-cells = <1>;
-            bindings = <&sl MOD>;
+            bindings = <&sl>;
         };
     };
         keymap {
