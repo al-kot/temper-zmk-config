@@ -59,11 +59,6 @@
             bindings = <&mo>, <&num_dance>;
         };
 
-        smod: smod {
-            compatible = "zmk,behavior-momentary-layer";
-            #binding-cells = <1>;
-            bindings = <&sl>;
-        };
     };
         keymap {
                 compatible = "zmk,keymap";
