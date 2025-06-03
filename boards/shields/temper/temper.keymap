@@ -55,33 +55,33 @@
         combos {
             compatible = "zmk,combos";
             lctrl {
-                timeout-ms = <50>;
+                timeout-ms = <30>;
                 key-positions = <11 13>;
                 bindings = <&kp LCTRL>;
             };
             lalt {
-                timeout-ms = <50>;
+                timeout-ms = <30>;
                 key-positions = <11 12>;
                 bindings = <&kp LALT>;
             };
             lgui {
-                timeout-ms = <50>;
+                timeout-ms = <30>;
                 key-positions = <12 13>;
                 bindings = <&kp LGUI>;
             };
 
             rctrl {
-                timeout-ms = <50>;
+                timeout-ms = <30>;
                 key-positions = <16 18>;
                 bindings = <&kp RCTRL>;
             };
             ralt {
-                timeout-ms = <50>;
+                timeout-ms = <30>;
                 key-positions = <17 18>;
                 bindings = <&kp RALT>;
             };
             rgui {
-                timeout-ms = <50>;
+                timeout-ms = <30>;
                 key-positions = <16 17>;
                 bindings = <&kp RGUI>;
             };
