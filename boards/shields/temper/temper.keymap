@@ -18,6 +18,7 @@
 #define KR_FUN &lt FUN &key_repeat
 
 #define KEY_REP &mo FUN &key_repeat
+#define CAG LC(LA(LGUI))
 
 &lt {
     tapping-term-ms = <200>;
@@ -41,14 +42,14 @@
             mods = <(MOD_RSFT)>;
         };
 
-        mod_num: mod_num {
+        mod_num: mo_sk {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&sl>;
+            bindings = <&mo>, <&sk>;
 
         };
     };
@@ -63,7 +64,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt FUN SPC    &sm_shft       &mt RSFT BSPC &mod_num NUM MOD  &sl SYM
+                                  &sl SYM     &lt NUM SPC    &sm_shft       &mt RSFT BSPC &mo_sk FUN CAG    &sl SYM
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
