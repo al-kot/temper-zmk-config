@@ -42,7 +42,7 @@
             mods = <(MOD_RSFT)>;
         };
 
-        mod_num: mo_sk {
+        mo_sk: mo_sk {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
