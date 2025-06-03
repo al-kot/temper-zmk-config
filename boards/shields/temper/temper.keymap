@@ -13,7 +13,6 @@
 #define NUM   1
 #define SYM   2
 #define FUN   3
-#define MOD   4
 
 #define KR_FUN &lt FUN &key_repeat
 
@@ -34,25 +33,59 @@
 };
 
 / {
-    behaviors {
-        sm_shft: smart_shift {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
-            mods = <(MOD_RSFT)>;
-        };
+        behaviors {
+            sm_shft: smart_shift {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&sk LSHFT>, <&caps_word>;
+                mods = <(MOD_RSFT)>;
+            };
 
-        mo_sk: mo_sk {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&sk>;
+            mo_sk: mo_sk {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <200>;
+                require-prior-idle-ms = <125>;
+                flavor = "tap-preferred";
+                bindings = <&mo>, <&sk>;
 
+            };
         };
-    };
+        combos {
+            compatible = "zmk,combos";
+            lctrl {
+                timeout-ms = <50>;
+                key-positions = <11 13>;
+                bindings = <&sk LCTRL>;
+            };
+            lalt {
+                timeout-ms = <50>;
+                key-positions = <11 12>;
+                bindings = <&sk LALT>;
+            };
+            lgui {
+                timeout-ms = <50>;
+                key-positions = <12 13>;
+                bindings = <&sk LGUI>;
+            };
+
+            lctrl {
+                timeout-ms = <50>;
+                key-positions = <16 18>;
+                bindings = <&sk RCTRL>;
+            };
+            ralt {
+                timeout-ms = <50>;
+                key-positions = <17 18>;
+                bindings = <&sk RALT>;
+            };
+            rgui {
+                timeout-ms = <50>;
+                key-positions = <16 17>;
+                bindings = <&sk RGUI>;
+            };
+        };
         keymap {
                 compatible = "zmk,keymap";
                 base {
@@ -102,19 +135,6 @@
       &kp ESC       &kp F4        &kp F5        &kp F6        &kp F11          &kp LEFT      &kp DOWN        &kp UP      &kp RIGHT      &kp RET
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       &trans        &kp F1        &kp F2        &kp F3        &kp F12        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_CLR  &bt BT_CLR_ALL
-//╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &trans        &trans        &trans            &trans        &trans        &trans
-//                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-                        >;
-                };
-                mod {
-                        bindings = <
-//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &trans       &sk LALT      &sk LCTRL      &sk LGUI      &trans            &trans       &sk RGUI      &sk RCTRL      &sk RALT      &trans
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
                                   &trans        &trans        &trans            &trans        &trans        &trans
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
