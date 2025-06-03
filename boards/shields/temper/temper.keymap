@@ -70,7 +70,7 @@
                 bindings = <&sk LGUI>;
             };
 
-            lctrl {
+            rctrl {
                 timeout-ms = <50>;
                 key-positions = <16 18>;
                 bindings = <&sk RCTRL>;
