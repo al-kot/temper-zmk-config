@@ -19,6 +19,8 @@
 #define KEY_REP &mo FUN &key_repeat
 #define CAG LC(LA(LGUI))
 
+#define SF_CTRL &kp_sk LSFT LCTRL
+
 &lt {
     tapping-term-ms = <200>;
 };
@@ -41,6 +43,16 @@
                 mods = <(MOD_RSFT)>;
             };
 
+            kp_sk: kp_sk {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <200>;
+                require-prior-idle-ms = <125>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&sk>;
+            };
+
             mo_sk: mo_sk {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
@@ -49,7 +61,6 @@
                 require-prior-idle-ms = <125>;
                 flavor = "tap-preferred";
                 bindings = <&mo>, <&sk>;
-
             };
         };
         combos {
@@ -97,7 +108,7 @@
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt NUM SPC    &sm_shft       &mt RSFT BSPC &mo_sk FUN CAG    &sl SYM
+                              &mo_sk SYM LALT &lt NUM SPC     SF_CTRL        &mt RGUI BSPC &mo_sk FUN CAG  &lt SYM RET
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
