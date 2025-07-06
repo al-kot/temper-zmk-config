@@ -19,7 +19,7 @@
 #define KEY_REP &mo FUN &key_repeat
 #define CAG LC(LA(LGUI))
 
-#define SF_CTRL &kp_sk LSFT LCTRL
+#define SF_CTRL &kp_sk LCTRL LSFT
 
 &lt {
     tapping-term-ms = <200>;
