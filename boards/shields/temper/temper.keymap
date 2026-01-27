@@ -158,14 +158,13 @@
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
        &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y        &kp SQT
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-       &kp A         &kp R         &kp S         &kp T         &kp D             &kp H         &kp N         &kp E         &kp I        &kp O
+    &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSFT T      &kp D             &kp H      &hmr RSFT N   &hmr RCTRL E  &hmr RALT I   &hmr RGUI O
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
        &kp Z         &kp X         &kp C         &kp V         &kp B             &kp K         &kp M        &kp COMMA      &kp DOT      &kp FSLH
 //╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                                  &sl SYM     &lt NUM SPC     SF_CTRL       &kp_sk RALT RGUI &lt FUN BSPC  &caps_word
+                                  &sl SYM     &lt NUM SPC     &kp CAG           &kp RET     &lt FUN BSPC  &caps_word
 //                            ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
-       // &kp A      &hml LALT R   &hml LCTRL S  &hml LGUI T      &kp D             &kp H      &hmr RGUI N   &hmr RCTRL E  &hmr RALT I     &kp O
                 };
                 num {
                         bindings = <
