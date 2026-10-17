@@ -25,7 +25,7 @@
 
 #define BASE  0
 #define NUM   1
-#define NUM   2
+#define FNUM  2
 #define SYM   3
 #define FUN   4
 #define MOUSE 5
